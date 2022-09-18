@@ -1,0 +1,30 @@
+body{
+    background-color: #ffde59;
+    color: #545454;
+    
+}
+/* .container{
+    margin:0 !important;
+    padding: 0 !important;
+    width: 100%;
+} */
+.main-container{
+    padding-top: 50px;
+}
+.btn-submit-container{
+    padding-top: 25px
+}
+.image-preview{
+    max-width: 85%;
+}
+
+.header-project{
+    margin-bottom: 1.5rem;
+}
+
+.description-project{
+    margin-bottom: 1.2rem;
+}
+.image-window{
+    margin-top: 2rem;
+}
