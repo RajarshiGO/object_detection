@@ -51,8 +51,9 @@ def get_mask(y_true):
 
 def process_predictions(predictions, image_grid):
     predictions = prediction_to_bbox(predictions, image_grid)
+    print(predictions.shape)
     bboxes = non_max_suppression(predictions, top_n=100)
-        
+    #print(bboxes)    
     # back to coco shape
     bboxes[:,:,2:4] = bboxes[:,:,2:4] - bboxes[:,:,0:2]
     
@@ -103,6 +104,7 @@ def non_max_suppression(predictions, top_n):
     
     bboxes = switch_x_y(bboxes)
     bboxes, probabilities = select_top(probabilities, bboxes, top_n=top_n)
+    print(bboxes.shape)
     bboxes = switch_x_y(bboxes)
     
     return bboxes
@@ -126,7 +128,7 @@ def select_top(probabilities, boxes, top_n=10):
         scores = probabilities, 
         max_output_size = top_n, 
         iou_threshold = 0.3,
-        score_threshold = 0.3
+        score_threshold = 0.1
     )
     
     top_indices = top_indices.numpy()
