@@ -1,5 +1,7 @@
 import tensorflow as tf
 import numpy as np
+from PIL import Image
+from PIL import ImageDraw
 
 def custom_loss(y_true, y_pred):
     binary_crossentropy = prob_loss = tf.keras.losses.BinaryCrossentropy(
@@ -127,10 +129,43 @@ def select_top(probabilities, boxes, top_n=10):
         boxes = boxes, 
         scores = probabilities, 
         max_output_size = top_n, 
-        iou_threshold = 0.3,
+        iou_threshold = 0.5,
         score_threshold = 0.3
     )
     
     top_indices = top_indices.numpy()
     
     return boxes[top_indices], probabilities[top_indices]
+
+def draw_bboxes(image_id, bboxes, source='train'):  
+    image = Image.open(image_id)
+    image = image.resize((256,256))
+    
+    draw = ImageDraw.Draw(image)
+            
+    for bbox in bboxes:
+        draw_bbox(draw, bbox)
+    
+    return np.asarray(image)
+
+
+def draw_bbox(draw, bbox):
+    x, y, width, height = bbox
+    draw.rectangle([x, y, x + width, y + height], width=2, outline='red')
+
+def form_image_grid():    
+    image_grid = np.zeros((32, 32, 4))
+
+    # x, y, width, height
+    cell = [0, 0, 256 / 32, 256 / 32] 
+
+    for i in range(0, 32):
+        for j in range(0, 32):
+            image_grid[i,j] = cell
+
+            cell[0] = cell[0] + cell[2]
+
+        cell[0] = 0
+        cell[1] = cell[1] + cell[3]
+
+    return image_grid

@@ -1,45 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
-
-</head>
-
-<body>
-    {% include 'navbar.html' %}
-    <div class="container main-container">
-        <div class = "row">
-            <h3 class="header-project">Eitu header 3 tag. This will help you with SEO</h3>
-            <p class="description-project"> Eitu paragraph tag yaat description likhibi</p>
-            <!-- Kiba list thakile tolot khini control + / maari uncomment kori dibi -->
+<div class="container main-container">
+    <div class="row">
+        <div class="col-md-10 form-group">
+            <label for="fileInput">File input</label>
+            <input type="file" class="form-control" onchange="loadImg()" id="fileInput" aria-describedby="fileHelp">
         </div>
-        <div class="row">
-            <div class="input-group mb-3">
-                <input class = "custom-file-input"  type="file" class="form-control" onchange="loadImg()" id="fileInput" aria-describedby="fileHelp">
-            </div>
-            <div class="btn-submit-container">
-                <button type="button" class="btn btn-danger" id="upload">Process Image</button>
-            </div>
-        </div>
-        <div class="image-window">
-            <img src="" id="imagePreview" class="image-preview">
+        <div class="col-md-2 btn-submit-container">
+            <button type="button" class="btn btn-primary" id="upload">Process Image</button>
         </div>
     </div>
-</body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="{{ url_for('static', filename='utils.js') }}">
-</script>
-
-</html>
+    <div>
+        <img src="" id="imagePreview" class="image-preview">
+    </div>
+</div>
 {% endblock %}
