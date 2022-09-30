@@ -55,7 +55,7 @@ def process_predictions(predictions, image_grid):
     bboxes = non_max_suppression(predictions, top_n=100)
     #print(bboxes)    
     # back to coco shape
-    bboxes[:,:,2:4] = bboxes[:,:,2:4] - bboxes[:,:,0:2]
+    bboxes[:,2:4] = bboxes[:,2:4] - bboxes[:,0:2]
     
     return bboxes
 
@@ -128,7 +128,7 @@ def select_top(probabilities, boxes, top_n=10):
         scores = probabilities, 
         max_output_size = top_n, 
         iou_threshold = 0.3,
-        score_threshold = 0.1
+        score_threshold = 0.3
     )
     
     top_indices = top_indices.numpy()
