@@ -25,6 +25,7 @@ This project demonstrates how to develop a object detection deep learning model 
 3.  Install the dependecies through ```pip```. Make sure to install ```pip``` beforehand.
    
     ```pip install -r requirements.txt```
-4. Type the command below to launch the app.
+4. Type the command below to start a flask server.
    
    ```flask run```
+5. Open a browser window and go to ```localhost:5000``` to launch the app.
