@@ -4,7 +4,7 @@
 ![demo](demo.gif)
 This project demonstrates how to develop a object detection deep learning model over a pre-trained CNN backbone such as ResNet50 from sratch. The model is trained on the [Global Wheat detection](https://www.kaggle.com/c/global-wheat-detection) challenge data available on [kaggle](kaggle.com). The entire deep learning model is written and trained in tensorflow and numpy and then deployed as web application using flask and Apache httpd server and then containerized using docker. The web app can be viewed [here](https://wheat-tip-detection.azurewebsites.net/).
 
-Check out the ```notebook.ipynb``` jupyter notebook for step by step explanation.
+Check out the ```notebook.ipynb``` jupyter notebook for step by step explanation or check this [link](https://hub.gke2.mybinder.org/user/rajarshigo-object_detection-qsaiyj01/lab/workspaces/auto-C/tree/notebook.ipynb) for an interactive Jupyter environment.
 
 # To run locally using docker
 1. Install docker using your distribution's package manager or follow the instructions on the official [website.](https://docs.docker.com/engine/install/)
