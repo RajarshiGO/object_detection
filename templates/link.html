@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% if image_path %}
+<h1>Here is the output !</h1>
+<br/>
+<div>
+    <img src={{image_path}}>
+</div>
+
+    
+{% else %}
+<h1>Detect objects using an image URL.</h1>
+<br />
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.link.label(class="form-label") }}
+    {{ form.link(class="form-control") }}
+    <br />
+    {{ form.submit(class="btn btn-dark") }}
+</form>
+<p class="link-note">If you want to upload an image from your device.<a class="" href="{{url_for('index')}}"> Click here.</a></p>
+<style>
+    .link-note{
+        margin-top: 2rem;
+    }
+</style>
+{% endif %}
+
+{% endblock %}

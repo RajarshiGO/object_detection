@@ -1,1 +1,6 @@
 flask
+tensorflow
+numpy
+matplotlib
+albumentations
+flask_wtf

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="about-text">
+The spread of online hate and toxicity has gained significant attention in recent times. This has led to a great number of indivduals refraining from sharing their views online along with rising mental health concerns. This web application is an attempt to provide an automated method of screening toxicity in comments and statements made online so that appropriate actions can be taken against the offender in an automated manner.
+
+Behind the scenes, this app deploys a powerful deep learning model to make accurate predictions.
+</div>
+
+
+<div class="author-text">
+This application is created with love by <i> &nbsp; Rajarshi Goswami &nbsp;</i> with special help from <i> &nbsp; Manas Sarma &nbsp; </i> in the frontend.
+</div>
+<style>
+    .about-text{
+        text-align: justify;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .author-text{
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+    }
+</style>
+{% endblock %}

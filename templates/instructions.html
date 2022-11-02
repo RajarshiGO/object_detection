@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="instruction-body">
+    <div class="description-text">
+        This web application can detect wheat tips present in the image (for more information see the about page). There
+        are two ways you can interact with the application, you can either upload an image that contains one or more
+        wheat tips or you can provide an URL to a similar image.
+        On starting the web app, you will be greeted by an ulpoad form that asks the user to upload an image. Upload an
+        image and click on "Process Image" to get the bounding boxes.
+
+    </div>
+    <img src="static/upload.png" alt="Example image" class="img-1" width="1000px">
+    <img src="static/upload-sm.png" alt="Example image" class="img-1-sm" width="1000px">
+    <div class="description-text">
+        If you want to provide an image URL then you can use the link available in the prompt displayed below the upload
+        form. Alternatively, you can use the "Input Methods" drop down menu in the top bar to select the suitable input
+        method. Provide the URL in the form and click on "Submit" to display the bounding boxes.
+    </div>
+    <img src="static/url.png" alt="Example image" class="img-2" width="1000px">
+    <img src="static/url-sm.png" alt="Example image" class="img-2-sm" width="1000px">
+    <div class="description-text">
+        You can try some of these sample image URLs. You can either download these images locally and then upload it to the web app ("Home") or you can directly copy the URL and paste it in the text box of "Get predictions from URL" page.
+    </div>
+    <div class="list-box">
+        <ul>
+            <li>https://www.frontierag.co.uk/images/easyblog_articles/140/Frontier-Aylsham-2.7.2015-0145.jpg</li>
+            <li>https://www.eeob.iastate.edu/research/IowaGrasses/ornamental/aaimages/PolMon1s.jpg</li>
+            <li> https://plantatlas.brc.ac.uk/sites/www.brc.ac.uk.plantatlas/files/styles/largest_1152_870/public/images/Cynosurus_echinatus_Bembridge_SZ644884_MCotterill_IWNHAS.jpg?itok=6vEvdKL_</li>
+            <li> https://www.uaex.uada.edu/farm-ranch/resource-library/forages-id-database/images/grass-images/wheat-pasture/wheat_pasture%201.JPG</li>
+            <li>https://www.gannett-cdn.com/-mm-/98e9eb0055148d8550b3a7d264f19fd6462e6062/c=0-213-4288-2636/local/-/media/2016/09/20/INGroup/Indianapolis/636099700465925247-DSC-0028.jpeg?width=660&height=373&fit=crop&format=pjpg&auto=webp</li>
+            <li>https://nordicagriresearch.org/wp-content/uploads/2020/12/Sortsblanding-1-768x431.jpg</li>
+            <li>https://d3mdtxxgfz6upn.cloudfront.net/WEBFILES/000/646/865/1715696-646865.jpg</li>
+            <li>https://cdn.agriland.ie/uploads/2020/07/Image-source-AgriLand.-Drummonds-Trial-Site.-Phylgreen-plus-standard.-1280x720.jpg</li>
+        </ul>
+    </div>
+</div>
+<style>
+    .img-1-sm {
+        display: none;
+    }
+
+    .img-2-sm {
+        display: none;
+    }
+
+    .instruction-body {
+        color: #2c2c2c;
+        font-size: 1rem;
+
+    }
+
+    @media only screen and (max-width:750px) {
+
+        .img-1,
+        .img-2 {
+            width: 700px
+        }
+    }
+
+    @media only screen and (max-width:450px) {
+        .img-1 {
+            display: none;
+        }
+
+        .img-1-sm {
+            width: 300px;
+            display: block;
+        }
+    }
+
+    @media only screen and (max-width:450px) {
+        .img-2 {
+            display: none;
+        }
+
+        .img-2-sm {
+            width: 300px;
+            display: block;
+        }
+    }
+
+    .description-text {
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+    }
+
+    .description-text-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+    }
+</style>
+{% endblock %}
