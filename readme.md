@@ -2,7 +2,7 @@
 # A YOLO based object detection model using a pre-trained ResNet50 backbone from scratch
 
 ![demo](demo.gif)
-This project demonstrates how to develop a object detection deep learning model over a pre-trained CNN backbone such as ResNet50 from sratch. The model is trained on the [Global Wheat detection](https://www.kaggle.com/c/global-wheat-detection) challenge data available on [kaggle](kaggle.com). The entire deep learning model is written and trained in tensorflow and numpy and then deployed as web application using flask and Apache httpd server and then containerized using docker. The web app can be viewed [here](https://wheat-tip-detection.azurewebsites.net/).
+This project demonstrates how to develop a object detection deep learning model over a pre-trained CNN backbone such as ResNet50 from sratch. The model is trained on the [Global Wheat detection](https://www.kaggle.com/c/global-wheat-detection) challenge data available on [kaggle](kaggle.com). The entire deep learning model is written and trained in tensorflow and numpy and then deployed as web application using flask and [Apache httpd](https://httpd.apache.org/) server and then containerized using [docker[(https://www.docker.com/). The web app can be viewed [here](https://wheat-tip-detection.azurewebsites.net/).
 
 Check out the ```notebook.ipynb``` jupyter notebook for step by step explanation.
 
