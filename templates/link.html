@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+<!-- Initially when the function invoking this page runs for the first time, the returned image path is None and this statement verifies exactly this and displays output image if input path is not None-->
 {% if image_path %}
 <h1>Here is the output !</h1>
 <br/>
@@ -10,7 +10,7 @@
     <img src={{image_path}}>
 </div>
 
-    
+<!-- If the previous if block fails then this section is evoked that displays the URL form -->
 {% else %}
 <h1>Detect objects using an image URL.</h1>
 <br />
